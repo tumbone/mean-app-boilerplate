@@ -1,4 +1,6 @@
-
+var User = require('mongoose').model('User'),
+    passport = require('passport');
+    
 var getErrorMessage = function(err) {
     var message = '';
     var User = require('mongoose').model('User');
@@ -112,7 +114,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
 };
 
 
-//I WILL NOT NEED THESE, REMOVE ROUTES IN `users.server.routes.js`
+//I WILL NOT NEED THESE, SHOULD ALSO REMOVE ROUTES IN `users.server.routes.js`
 exports.create = function(req, res, next) {
     var user = new User(req.body);
     user.save(function(err) {
