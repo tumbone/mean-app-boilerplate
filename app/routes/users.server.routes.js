@@ -18,6 +18,16 @@ module.exports = function(app){
            failureFlash: true
        }));
 
+       app.get('/oauth/twitter', passport.authenticate('twitter', {
+           failureRedirect: '/login'
+       }));
+
+       app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
+           failureRedirect: '/login',
+           successRedirect: '/'
+       }));
+
        app.get('/logout', users.logout);
+
 
 };
