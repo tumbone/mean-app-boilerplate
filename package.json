@@ -1,0 +1,15 @@
+{
+  "name": "mean-app-boilerplate",
+  "version": "1.0.0",
+  "description": "Mean stack web application boilerplate",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Mean",
+    "MVC"
+  ],
+  "author": "Tumbone Asukile",
+  "license": "MIT"
+}
