@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanApp', [
-    'dashboardView'
+    'ngRoute','dashboardView'
 ]);
 
 //First two lines above would usually be sufficient
