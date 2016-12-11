@@ -6,10 +6,23 @@
 
           $routeProvider.
             when('/', {
-              template: '<dashboard-view><dashboard-view'
+              template: '<dashboard-view><dashboard-view>'
             }).
             when('/todos',{
-                templateUrl: '/todos/list-todos.template.html'
+                //@TODO Fix this to use angular component
+                templateUrl: '/todos/views/list-todos.template.html'
+            }).
+            when('/todos/create', {
+                //@TODO Fix this to use angular component
+                templateUrl: '/todos/views/create-todo.template.html'
+            }).
+            when('/todos/:todoId', {
+                //@TODO Fix this to use angular component
+                templateUrl: 'todos/views/view-todo.template.html'
+            }).
+            when('/todos/:todoId/edit', {
+                //@TODO Fix this to use angular component
+                templateUrl: 'todos/views/edit-todo.template.html'
             }).
             otherwise('/');
         }
