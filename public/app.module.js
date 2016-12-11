@@ -1,5 +1,7 @@
 'use strict';
 
-var meanApp = angular.module('meanApp', []);
+angular.module('meanApp', [
+    'dashboardView'
+]);
 
 //First two lines above would usually be sufficient

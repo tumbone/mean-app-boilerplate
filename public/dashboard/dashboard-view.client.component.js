@@ -1,10 +1,9 @@
 angular.
-module('meanApp').
+module('dashboardView').
     component('dashboardView',{
-        template: '<p>Dashboard View</p>'+ '<span>{{$ctrl.test_var}}</span>',
+        templateUrl: '/dashboard/dashboard-view.template.html',
         controller: function dashboardCtrl(){
-            this.test_var = 'template from the dashboard component';
-
+            this.test_var = 'serving static template from server';
         }
 
     });

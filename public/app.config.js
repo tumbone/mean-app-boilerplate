@@ -1,4 +1,4 @@
-angular.module('mean').
+angular.module('meanApp').
     config('$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider){
         $locationProvider.hashPrefix('!');
