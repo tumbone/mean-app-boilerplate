@@ -1,1 +1,1 @@
-angular.module('dashboardView',[]);
+angular.module('dashboardView',['core.users']);

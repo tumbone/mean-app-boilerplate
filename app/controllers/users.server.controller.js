@@ -1,6 +1,6 @@
 var User = require('mongoose').model('User'),
     passport = require('passport');
-    
+
 var getErrorMessage = function(err) {
     var message = '';
     var User = require('mongoose').model('User');
@@ -112,6 +112,16 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
         }
     );
 };
+
+exports.requiresLogin = function(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return res.status(401).send({
+            message: 'User is not logged in'
+        });
+    }
+    next();
+};
+
 
 
 //I WILL NOT NEED THESE, SHOULD ALSO REMOVE ROUTES IN `users.server.routes.js`
