@@ -1,1 +1,1 @@
-angular.module('core',['core.users']);
+angular.module('core',['core.users','core.todos']);

@@ -8,6 +8,9 @@
             when('/', {
               template: '<dashboard-view><dashboard-view'
             }).
+            when('/todos',{
+                templateUrl: '/todos/list-todos.template.html'
+            }).
             otherwise('/');
         }
       ]);
