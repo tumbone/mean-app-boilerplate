@@ -1,8 +1,9 @@
-'use strict';
-angular.module('dashboardView').
+angular.
+module('meanApp').
     component('dashboardView',{
-        templateUrl: 'dashboard-view/dashboard-view.template.html',
+        template: '<p>Dashboard View</p>'+ '<span>{{$ctrl.test_var}}</span>',
         controller: function dashboardCtrl(){
+            this.test_var = 'template from the dashboard component';
 
         }
 
