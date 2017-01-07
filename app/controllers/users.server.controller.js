@@ -100,7 +100,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
                                 req.flash('error', message);
                                 return res.redirect('/signup');
                             }
-                            return done(err, user);
+                             return done(err, user);
                         });
                     });
                 }
