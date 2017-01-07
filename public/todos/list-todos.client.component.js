@@ -1,5 +1,8 @@
-angular.module('todos')
+//@TODO FIX: THIS DOESN'T WORK!!!!!!!
+//FIX CONTROLLER TO USE NAME OF CONTROLLER AS A VARIABLE REFERENCE
+
+angular.module('listTodos')
     .component('listTodos',[{
-        templateUrl:'/todos/list-todos.template.html',
+        templateUrl:'/todos/views/list-todos.template.html',
         controller: TodosCtrl
     }]);
