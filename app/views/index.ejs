@@ -26,6 +26,7 @@
     <script type="text/javascript">
         //IMPORTANT: If no user exitst the variable below stores the STRING 'null',
         //this is important with regards to how angular handles unauthenticated users.
+        //'null' string value will validate data-ng-show to false 
         window.user = <%- user || 'null' %>;
     </script>
 
