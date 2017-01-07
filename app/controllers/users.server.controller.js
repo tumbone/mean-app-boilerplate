@@ -100,13 +100,11 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
                                 req.flash('error', message);
                                 return res.redirect('/signup');
                             }
-                            console.log("Save, Here!");
                             return done(err, user);
                         });
                     });
                 }
                 else {
-                    console.log(user);                    
                     return done(err, user);
 
                 }
