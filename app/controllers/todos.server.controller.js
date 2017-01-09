@@ -28,8 +28,22 @@ exports.create = function(req, res) {
     });
 };
 
+//Not using this anymore as it fetches all the todos from the database
 exports.list = function(req, res) {
     Todo.find().sort('-created').populate('creator', 'name username').exec(function(err, todos) {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+            res.json(todos);
+        }
+    });
+};
+
+//List only the todos created by the User currently logged in
+exports.listCreatedTodos = function(req, res) {
+    Todo.find({"creator": req.user._id}).sort('-created').populate('creator', 'name username').exec(function(err, todos) {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)

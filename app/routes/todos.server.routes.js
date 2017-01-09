@@ -6,7 +6,7 @@ var users = require('../../app/controllers/users.server.controller'),
 
 module.exports = function(app){
     app.route('/api/todos')
-        .get(todos.list)
+        .get(todos.listCreatedTodos)
         .post(users.requiresLogin, todos.create);
 
     app.route('/api/todos/:todoId')
