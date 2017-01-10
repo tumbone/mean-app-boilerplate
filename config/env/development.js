@@ -8,6 +8,6 @@ module.exports = {
         clientID: 'LOub49i95Gtd7jBlH5UGh7MRC',
 //        clientSecret: 'API Secret',
         clientSecret: 'uQkg6qQ6PhZ0LdLFbJ2VV6LMLmeHK42RAtNEDtZcLVbD0i9epe',
-        callback: 'http://localhost:1337/oauth/twitter/callback'
+        callback: 'http://localhost:'+ port + '/oauth/twitter/callback'
     }
 };
