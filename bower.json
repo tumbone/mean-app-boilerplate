@@ -1,0 +1,25 @@
+{
+  "name": "meanApp",
+  "description": "Mean stack web application boilerplate",
+  "main": "server.js",
+  "authors": [
+    "Tumbone Asukile"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Mean",
+    "MVC"
+  ],
+  "homepage": "https://github.com/tumbone/mean-app-boilerplate",
+  "private": true,
+  "dependencies": {
+    "angular-route": "^1.6.0",
+    "angular": "^1.6.0",
+    "bootstrap": "^3.3.7",
+    "angular-resource": "^1.6.0",
+    "angular-mocks": "^1.6.1"
+  },
+  "resolutions": {
+    "angular": "1.6.1"
+  }
+}
