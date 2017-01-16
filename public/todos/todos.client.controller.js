@@ -3,10 +3,10 @@ angular.module('todos').
     function($scope, $routeParams, $location, UserAuthentication, Todos){
 
         //$scope.authentication = UserAuthentication;
-        $scope.authentication = "user";
-        $scope.testVar = "Hello Test!";
+        this.authentication = "user";
+        this.testVar = "Unit Test Successful!";
 
-        $scope.create = function() {
+        this.create = function() {
             var todo = new Todos({
                 title: this.title,
                 comment: this.comment
@@ -15,39 +15,39 @@ angular.module('todos').
             todo.$save(function(response) {
                 $location.path('todos/' + response._id);
             }, function(errorResponse) {
-                $scope.error = errorResponse.data.message;
+                this.error = errorResponse.data.message;
             });
         };
 
-        $scope.find = function() {
-            $scope.todos = Todos.query();
+        this.find = function() {
+            this.todos = Todos.query();
         };
 
-        $scope.findOne = function() {
-            $scope.todo = Todos.get({
+        this.findOne = function() {
+            this.todo = Todos.get({
                 todoId: $routeParams.todoId
             });
         };
 
-        $scope.update = function() {
+        this.update = function() {
             $scope.todo.$update(function() {
-                $location.path('todos/' + $scope.todo._id);
+                $location.path('todos/' + this.todo._id);
             }, function(errorResponse) {
-                $scope.error = errorResponse.data.message;
+                this.error = errorResponse.data.message;
             });
         };
 
-        $scope.delete = function(todo) {
+        this.delete = function(todo) {
             if (todo) {
                 todo.$remove(function() {
                     for (var i in $scope.todos) {
-                        if ($scope.todos[i] === todo) {
-                            $scope.todos.splice(i, 1);
+                        if (this.todos[i] === todo) {
+                            this.todos.splice(i, 1);
                         }
                     }
                 });
             } else {
-                $scope.todo.$remove(function() {
+                this.todo.$remove(function() {
                     $location.path('todos');
                 });
             }

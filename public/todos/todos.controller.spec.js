@@ -11,8 +11,8 @@ describe('todos', function(){
 
         }));
 
-        it('should initialise variable `testVar` to `Hello!`', function() {
-          expect(ctrl.testVar).toBe('age');
+        it('should initialise variable `testVar` to `Unit Test Successful!`', function() {
+          expect(ctrl.testVar).toBe('Unit Test Successful!');
         });
 
     });
