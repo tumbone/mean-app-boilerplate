@@ -2,7 +2,9 @@ angular.module('todos').
     controller('TodosCtrl',['$scope','$routeParams','$location','UserAuthentication','Todos',
     function($scope, $routeParams, $location, UserAuthentication, Todos){
 
-        $scope.authentication = UserAuthentication;
+        //$scope.authentication = UserAuthentication;
+        $scope.authentication = "user";
+        $scope.testVar = "Hello Test!";
 
         $scope.create = function() {
             var todo = new Todos({

@@ -15,10 +15,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+        'js/jquery-3.1.1.min.js', //@TODO FIX: Change this to `bower_components`
+        'bower_components/bootstrap/dist/js/bootstrap.js',
         'bower_components/angular/angular.js',
+        'bower_components/angular-resource/angular-resource.js',        
+        'bower_components/angular-route/angular-route.js',
         'bower_components/angular-mocks/angular-mocks.js',
         '**/*.module.js',
         '*!(.module|.spec).js',
+         '!(bower_components)/**/*!(.module|.spec).js',
         '**/*.spec.js'
     ],
 
