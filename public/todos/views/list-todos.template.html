@@ -42,7 +42,7 @@
     <section data-ng-init="find()">
         <div class="container">
             <h1>Todos</h1>
-            Show completed: <input type="checkbox" ng-model="showcompleted" ng-init="showcompleted=true">
+            Show completed: <input type="checkbox" ng-model="showcompleted" ng-init="showcompleted=true">            
             <ul>
                 <li data-ng-repeat="todo in todos" ng-if="showcompleted && todo.completed || !todo.completed">
                     <a data-ng-href="#!/todos/{{todo._id}}" data-ng-bind="todo.title" ng-class="todo.completed?'completed':''"></a>

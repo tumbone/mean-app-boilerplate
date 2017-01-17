@@ -4,6 +4,7 @@ angular.module('todos').
 
         this.authentication = UserAuthentication;
         this.testVar = "Unit Test Successful!";
+        this.var = "some text!";
 
         this.create = function() {
             var todo = new Todos({
