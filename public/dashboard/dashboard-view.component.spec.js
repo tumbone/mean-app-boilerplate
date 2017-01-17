@@ -7,9 +7,9 @@ describe('dashboardView', function(){
     beforeEach(module('dashboardView'));
     beforeEach(module('core.users'));
 
-    it('should create a `TodosTest` model with 3 todos', inject(function($componentController){
-        //var ctrl = $componentController('dashboardCtrl');
-
-    }));
+    // it('should create a `TodosTest` model with 3 todos', inject(function($componentController){
+    //     //var ctrl = $componentController('dashboardCtrl');
+    //
+    // }));
 
 });
