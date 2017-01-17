@@ -1,53 +1,56 @@
+//@TODO CHECK: I've removed '$scope' from the array of directive dependencies below,
+//check that $scope does not introduce errors.
+
 angular.module('todos').
     controller('TodosCtrl',['$scope','$routeParams','$location','UserAuthentication','Todos',
     function($scope, $routeParams, $location, UserAuthentication, Todos){
 
-        this.authentication = UserAuthentication;
+        $scope.authentication = UserAuthentication;
         this.testVar = "Unit Test Successful!";
-        this.var = "some text!";
+        $scope.otherTestVar = "Another Unit Test Successful!";
 
-        this.create = function() {
+        $scope.create = function() {
             var todo = new Todos({
-                title: this.title,
-                comment: this.comment
+                title: $scope.title,
+                comment: $scope.comment
             });
 
             todo.$save(function(response) {
                 $location.path('todos/' + response._id);
             }, function(errorResponse) {
-                this.error = errorResponse.data.message;
+                $scope.error = errorResponse.data.message;
             });
         };
 
-        this.find = function() {
-            this.todos = Todos.query();
+        $scope.find = function() {
+            $scope.todos = Todos.query();
         };
 
-        this.findOne = function() {
-            this.todo = Todos.get({
+        $scope.findOne = function() {
+            $scope.todo = Todos.get({
                 todoId: $routeParams.todoId
             });
         };
 
-        this.update = function() {
+        $scope.update = function() {
             $scope.todo.$update(function() {
-                $location.path('todos/' + this.todo._id);
+                $location.path('todos/' + $scope.todo._id);
             }, function(errorResponse) {
-                this.error = errorResponse.data.message;
+                $scope.error = errorResponse.data.message;
             });
         };
 
-        this.delete = function(todo) {
+        $scope.delete = function(todo) {
             if (todo) {
                 todo.$remove(function() {
                     for (var i in $scope.todos) {
-                        if (this.todos[i] === todo) {
-                            this.todos.splice(i, 1);
+                        if ($scope.todos[i] === todo) {
+                            $scope.todos.splice(i, 1);
                         }
                     }
                 });
             } else {
-                this.todo.$remove(function() {
+                $scope.todo.$remove(function() {
                     $location.path('todos');
                 });
             }
