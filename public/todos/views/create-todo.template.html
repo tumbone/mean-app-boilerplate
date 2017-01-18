@@ -48,21 +48,21 @@
             <div>
                 <label for="title" class="sr-only">Title</label>
                 <div>
-                    <input type="text" data-ng-model="title" id="title" placeholder="Title" required autofocus class="form-control">
+                    <input type="text" data-ng-model="$ctrl.title" id="title" placeholder="Title" required autofocus class="form-control">
                 </div>
             </div>
 
             <div>
                 <label for="comment" class="sr-only">Comment</label>
                 <div>
-                    <textarea data-ng-model="comment" id="comment" cols="30" rows="10" placeholder="Comment" class="form-control"></textarea>
+                    <textarea data-ng-model="$ctrl.comment" id="comment" cols="30" rows="10" placeholder="Comment" class="form-control"></textarea>
                 </div>
             </div>
             <div>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Create TODO</button>
             </div>
-            <div data-ng-show="error">
-                <strong data-ng-bind="error"></strong>
+            <div data-ng-show="$ctrl.error">
+                <strong data-ng-bind="$ctrl.error"></strong>
             </div>
         </form>
     </section>
