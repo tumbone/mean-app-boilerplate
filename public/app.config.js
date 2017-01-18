@@ -12,8 +12,7 @@
                 //@TODO Fix this to use angular component
                 templateUrl: '/todos/views/list-todos.template.html'
             }).
-            when('/todoslist',{
-                //@TODO Fix this to use angular component
+            when('/todoslist',{                
                 template: '<list-todos><list-todos>'
             }).
             when('/todos/create', {
