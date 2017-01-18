@@ -2,55 +2,55 @@
 //check that $scope does not introduce errors.
 
 angular.module('todos').
-    controller('TodosCtrl',['$scope','$routeParams','$location','UserAuthentication','Todos',
-    function($scope, $routeParams, $location, UserAuthentication, Todos){
+    controller('TodosCtrl',['$routeParams','$location','UserAuthentication','Todos',
+    function( $routeParams, $location, UserAuthentication, Todos){
 
-        $scope.authentication = UserAuthentication;
+        this.authentication = UserAuthentication;
         this.testVar = "Unit Test Successful!";
-        $scope.otherTestVar = "Another Unit Test Successful!";
+        this.otherTestVar = "Another Unit Test Successful!";
 
-        $scope.create = function() {
+        this.create = function() {
             var todo = new Todos({
-                title: $scope.title,
-                comment: $scope.comment
+                title: this.title,
+                comment: this.comment
             });
 
             todo.$save(function(response) {
                 $location.path('todos/' + response._id);
             }, function(errorResponse) {
-                $scope.error = errorResponse.data.message;
+                this.error = errorResponse.data.message;
             });
         };
 
-        $scope.find = function() {
-            $scope.todos = Todos.query();
+        this.find = function() {
+            this.todos = Todos.query();
         };
 
-        $scope.findOne = function() {
-            $scope.todo = Todos.get({
+        this.findOne = function() {
+            this.todo = Todos.get({
                 todoId: $routeParams.todoId
             });
         };
 
-        $scope.update = function() {
-            $scope.todo.$update(function() {
-                $location.path('todos/' + $scope.todo._id);
+        this.update = function() {
+            this.todo.$update(function() {
+                $location.path('todos/' + this.todo._id);
             }, function(errorResponse) {
-                $scope.error = errorResponse.data.message;
+                this.error = errorResponse.data.message;
             });
         };
 
-        $scope.delete = function(todo) {
+        this.delete = function(todo) {
             if (todo) {
                 todo.$remove(function() {
-                    for (var i in $scope.todos) {
-                        if ($scope.todos[i] === todo) {
-                            $scope.todos.splice(i, 1);
+                    for (var i in this.todos) {
+                        if (this.todos[i] === todo) {
+                            this.todos.splice(i, 1);
                         }
                     }
                 });
             } else {
-                $scope.todo.$remove(function() {
+                this.todo.$remove(function() {
                     $location.path('todos');
                 });
             }

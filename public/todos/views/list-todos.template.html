@@ -1,4 +1,4 @@
-<div data-ng-controller="TodosCtrl">
+<div>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,18 +19,18 @@
                         <a href="/#!/"></a>
                     </li>
 
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/login">Login</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/register">Register</a>
                     </li>
 
-                    <li class="page-scroll" data-ng-show="authentication.user">
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
                         <a href="/#!/todos/create">CREATE</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="authentication.user">
-                        <a href="/logout">Hello <span data-ng-bind="authentication.user.username" data-ng-show="authentication.user"></span>, Logout?</a>
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
+                        <a href="/logout">Hello <span data-ng-bind="$ctrl.authentication.user.username" data-ng-show="$ctrl.authentication.user"></span>, Logout?</a>
                     </li>
                 </ul>
             </div>
@@ -39,12 +39,12 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <section data-ng-init="find()">
+    <section data-ng-init="$ctrl.find()">
         <div class="container">
             <h1>Todos</h1>
-            Show completed: <input type="checkbox" ng-model="showcompleted" ng-init="showcompleted=true">            
+            Show completed: <input type="checkbox" ng-model="showcompleted" ng-init="showcompleted=true">
             <ul>
-                <li data-ng-repeat="todo in todos" ng-if="showcompleted && todo.completed || !todo.completed">
+                <li data-ng-repeat="todo in $ctrl.todos" ng-if="showcompleted && todo.completed || !todo.completed">
                     <a data-ng-href="#!/todos/{{todo._id}}" data-ng-bind="todo.title" ng-class="todo.completed?'completed':''"></a>
                     (<small data-ng-bind="todo.created | date:'short'"></small>)
                     <br>

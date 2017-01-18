@@ -1,4 +1,4 @@
-<div data-ng-controller="TodosCtrl">
+<div>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,21 +19,21 @@
                         <a href="#page-top"></a>
                     </li>
 
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/login">Login</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/register">Register</a>
                     </li>
 
-                    <li class="page-scroll" data-ng-show="authentication.user">
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
                         <a href="/#!/todos/create">CREATE</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="authentication.user">
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
                         <a href="/#!/todos">TODOs</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="authentication.user">
-                        <a href="/logout">Hello <span data-ng-bind="authentication.user.username" data-ng-show="authentication.user"></span>, Logout?</a>
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
+                        <a href="/logout">Hello <span data-ng-bind="$ctrl.authentication.user.username" data-ng-show="$ctrl.authentication.user"></span>, Logout?</a>
                     </li>
                 </ul>
             </div>
@@ -42,15 +42,15 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <section data-ng-init="findOne()" class="container">
-        <h1 data-ng-bind="todo.title" ng-class="todo.completed?'completed':''"></h1>
-        <div data-ng-show="authentication.user._id == todo.creator._id">
-            <a href="/#!/todos/{{todo._id}}/edit">edit</a>
-            <a href="#" data-ng-click="delete();">delete</a>
+    <section data-ng-init="$ctrl.findOne()" class="container">
+        <h1 data-ng-bind="$ctrl.todo.title" ng-class="$ctrl.todo.completed?'completed':''"></h1>
+        <div data-ng-show="$ctrl.authentication.user._id == $ctrl.todo.creator._id">
+            <a href="/#!/todos/{{$ctrl.todo._id}}/edit">edit</a>
+            <a href="#" data-ng-click="$ctrl.delete();">delete</a>
         </div>
         <small>
-        <em data-ng-bind="todo.created | date:'mediumDate'"></em>
+        <em data-ng-bind="$ctrl.todo.created | date:'mediumDate'"></em>
         </small>
-        <p data-ng-bind="todo.comment"></p>
+        <p data-ng-bind="$ctrl.todo.comment"></p>
     </section>
 </div>

@@ -1,4 +1,4 @@
-<div data-ng-controller="TodosCtrl">
+<div>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,21 +19,21 @@
                         <a href="#page-top"></a>
                     </li>
 
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/login">Login</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/register">Register</a>
                     </li>
 
                     <!--<li class="page-scroll">
                         <a href="https://github.com/Hitman666/MEAN_MVC_4thTutorial">Fork on Github</a>
                     </li>-->
-                    <li class="page-scroll" data-ng-show="authentication.user">
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
                         <a href="/#!/todos">TODOS</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="authentication.user">
-                        <a href="/logout">Hello <span data-ng-bind="authentication.user.username" data-ng-show="authentication.user"></span>, Logout?</a>
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
+                        <a href="/logout">Hello <span data-ng-bind="$ctrl.authentication.user.username" data-ng-show="$ctrl.authentication.user"></span>, Logout?</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
 
     <section class="container">
         <h1>New Todo</h1>
-        <form class="form-signin" data-ng-submit="create()" novalidate>
+        <form class="form-signin" data-ng-submit="$ctrl.create()" novalidate>
             <div>
                 <label for="title" class="sr-only">Title</label>
                 <div>

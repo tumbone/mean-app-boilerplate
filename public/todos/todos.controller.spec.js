@@ -7,9 +7,8 @@ describe('todos', function(){
     describe('TodosCtrl', function(){
 
         var ctrl, routeParams, userAuth;
-        var scope = {};
         beforeEach(inject(function($controller){
-            ctrl = $controller('TodosCtrl',{$scope: scope, $routeParams: routeParams, UserAuthentication: userAuth});
+            ctrl = $controller('TodosCtrl',{$routeParams: routeParams, UserAuthentication: userAuth});
 
         }));
 
@@ -17,14 +16,6 @@ describe('todos', function(){
           expect(ctrl.testVar).toBe('Unit Test Successful!');
         });
 
-        it('should initialise variable `otherTestVar` to `Another Unit Test Successful!`', function() {
-         expect(scope.otherTestVar).toBe('Another Unit Test Successful!');
-        });
-
-
-
     });
-
-
 
 });

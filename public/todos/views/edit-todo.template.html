@@ -1,4 +1,4 @@
-<div data-ng-controller="TodosCtrl">
+<div>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,21 +19,21 @@
                         <a href="#page-top"></a>
                     </li>
 
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/login">Login</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="!authentication.user">
+                    <li class="page-scroll" data-ng-show="!$ctrl.authentication.user">
                         <a href="/register">Register</a>
                     </li>
 
-                    <li class="page-scroll" data-ng-show="authentication.user">
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
                         <a href="/#!/todos/create">CREATE</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="authentication.user">
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
                         <a href="/#!/todos">TODOs</a>
                     </li>
-                    <li class="page-scroll" data-ng-show="authentication.user">
-                        <a href="/logout">Hello <span data-ng-bind="authentication.user.username" data-ng-show="authentication.user"></span>, Logout?</a>
+                    <li class="page-scroll" data-ng-show="$ctrl.authentication.user">
+                        <a href="/logout">Hello <span data-ng-bind="$ctrl.authentication.user.username" data-ng-show="authentication.user"></span>, Logout?</a>
                     </li>
                 </ul>
             </div>
@@ -42,26 +42,26 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <section data-ng-init="findOne()" class="container">
+    <section data-ng-init="$ctrl.findOne()" class="container">
         <h1>Edit Todo</h1>
-        <form data-ng-submit="update()" novalidate class="form-signin">
+        <form data-ng-submit="$ctrl.update()" novalidate class="form-signin">
             <div>
                 <label for="title" class="sr-only">Title</label>
                 <div>
-                    <input type="text" data-ng-model="todo.title" id="title" placeholder="Title" required autofocus class="form-control">
+                    <input type="text" data-ng-model="$ctrl.todo.title" id="title" placeholder="Title" required autofocus class="form-control">
                 </div>
             </div>
 
             <div>
                 <div>
-                    Completed: <input type="checkbox" data-ng-model="todo.completed" ng-checked="todo.completed" name="completed" id="completed" class="form-control" />
+                    Completed: <input type="checkbox" data-ng-model="$ctrl.todo.completed" ng-checked="todo.completed" name="completed" id="completed" class="form-control" />
                 </div>
             </div>
 
             <div>
                 <label for="comment" class="sr-only">Comment</label>
                 <div>
-                    <textarea data-ng-model="todo.comment" id="comment" cols="30" rows="10" placeholder="Comment" class="form-control"></textarea>
+                    <textarea data-ng-model="$ctrl.todo.comment" id="comment" cols="30" rows="10" placeholder="Comment" class="form-control"></textarea>
                 </div>
             </div>
             <div>

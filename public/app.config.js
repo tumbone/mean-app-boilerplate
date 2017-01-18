@@ -9,23 +9,16 @@
               template: '<dashboard-view><dashboard-view>'
             }).
             when('/todos',{
-                //@TODO Fix this to use angular component
-                templateUrl: '/todos/views/list-todos.template.html'
-            }).
-            when('/todoslist',{                
                 template: '<list-todos><list-todos>'
             }).
             when('/todos/create', {
-                //@TODO Fix this to use angular component
-                templateUrl: '/todos/views/create-todo.template.html'
+                template: '<create-todo><create-todo>'
             }).
             when('/todos/:todoId', {
-                //@TODO Fix this to use angular component
-                templateUrl: 'todos/views/view-todo.template.html'
+                template: '<view-todo><view-todo>'
             }).
             when('/todos/:todoId/edit', {
-                //@TODO Fix this to use angular component
-                templateUrl: 'todos/views/edit-todo.template.html'
+                template: '<edit-todo><edit-todo>'
             }).
             otherwise('/');
         }
