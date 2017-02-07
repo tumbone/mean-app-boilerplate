@@ -1,5 +1,5 @@
 {
-  "name": "meanApp",
+  "name": "mean-app",
   "description": "Mean stack web application boilerplate",
   "main": "server.js",
   "authors": [
