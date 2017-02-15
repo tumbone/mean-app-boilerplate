@@ -7,13 +7,4 @@ describe('Mean-App Boilerplate', function() {
     //expect(browser.geCurrentUrl()).toBe('/');
   });
 
-
-  describe('View: Login', function(){
-
-    browser.get('login');
-    it('should display the login page', function(){
-      expect(browser.getLocationAbsUrl()).toBe('/');
-      //var login = element(by.model());
-    });
-  });
 });
